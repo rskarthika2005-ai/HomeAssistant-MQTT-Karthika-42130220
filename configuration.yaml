@@ -1,0 +1,25 @@
+mqtt:
+  sensor:
+    # 1. Temperature Sensor
+    - name: "Karthika Temperature"
+      state_topic: "home/karthika-2025/sensor" /
+      value_template: "{{ value_json.temperature }}"
+      unit_of_measurement: "°C"
+      state_class: measurement
+      expire_after: 600 
+
+    # 2. Humidity Sensor
+    - name: "Karthika Humidity"
+      state_topic: "home/karthika-2025/sensor" 
+      value_template: "{{ value_json.humidity }}"
+      unit_of_measurement: "%"
+      state_class: measurement
+      expire_after: 600
+
+    # 3. Your Extra Sensor (Soil Moisture)
+    - name: "Karthika Soil Moisture"
+      state_topic: "home/karthika-2025/sensor" 
+      value_template: "{{ value_json.soil_moisture }}"
+      unit_of_measurement: "units"
+      state_class: measurement
+      expire_after: 600
