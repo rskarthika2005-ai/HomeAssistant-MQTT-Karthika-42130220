@@ -7,16 +7,16 @@ import random
 import json
 import logging 
 
-# Configure logging to output information and above, with a standard format
+
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
 student_name = "Karthika Ramasamy Senthilkumar" 
 unique_id = "42130220" 
 topic = "home/karthika-2025/sensor" 
-# -------------------------------------
 
-# ---------------- FINAL MQTT Settings ----------------
+
+
 broker = "192.168.29.188"
 port = 1883
 username = "final_fix_user"
