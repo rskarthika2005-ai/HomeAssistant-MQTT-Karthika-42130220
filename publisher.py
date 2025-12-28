@@ -22,13 +22,12 @@ port = 1883
 username = "final_fix_user"
 password = "mqtt1111"
 
-# ---------------- Connect to MQTT ----------------
+
 client = mqtt.Client()
 client.username_pw_set(username, password)
 
 try:
-    # CRITICAL FIX 1: Moved connect() inside the try block 
-    # This ensures the ConnectionRefusedError exception handler is active.
+   
     client.connect(broker, port) 
     
     logging.info(f"Connected to {broker}:{port} and publishing live sensor data...")
@@ -57,12 +56,12 @@ try:
 
 # --- Exception Handling ---
 except ConnectionRefusedError:
-    # Catches connection failure and logs a clear error
+   
     logging.error(f"Could not connect to MQTT broker at {broker}:{port}. Check if Mosquitto is running or firewall is blocking the connection.")
 except Exception as e:
-    # Catches other critical errors
+   
     logging.error(f"An unexpected error occurred: {e}")
 except KeyboardInterrupt:
     client.disconnect()
-    # CRITICAL FIX 2: Corrected indentation for clean exit logging
+   
     logging.info("Disconnected from MQTT broker.")
