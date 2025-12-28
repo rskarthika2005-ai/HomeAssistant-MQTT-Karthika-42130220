@@ -16,7 +16,7 @@ mqtt:
       state_class: measurement
       expire_after: 600
 
-    # 3. Your Extra Sensor (Soil Moisture)
+    # 3.  Extra Sensor (Soil Moisture)
     - name: "Karthika Soil Moisture"
       state_topic: "home/karthika-2025/sensor" 
       value_template: "{{ value_json.soil_moisture }}"
